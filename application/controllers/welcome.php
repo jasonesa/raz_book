@@ -38,6 +38,7 @@ class Welcome extends CI_Controller {
 		$data['reservations']=$res->result();
 		$data['resources']=$resources->result();
 		$this -> load -> view('header_view',$data);
+		
 		$this -> load -> view('welcome_message',$data);
 		$this -> load -> view('footer_view',$data);
 	}

@@ -80,7 +80,9 @@ class Reservation_model extends CI_Model {
 	}
 
 	public function get_reservations() {
+		//$this->db->where();
 		$reservations = $this -> db -> get("reservation");
+		
 		return $reservations -> result();
 	}
 
