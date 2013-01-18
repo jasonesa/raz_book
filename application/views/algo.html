@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<link rel="stylesheet" href="http://localhost/rzf_booking/css/normalize.css" type="text/css"/>
+		<link rel="stylesheet" href="http://localhost/rzf_booking/css/jquery-ui.css" />
+		<link rel="stylesheet" href="http://localhost/rzf_booking/css/main.css" type="text/css"/>
+		<script src="http://localhost/rzf_booking/js/libs/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+		<meta charset="utf-8">
+		<title>Welcome to booking system</title>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+		<![endif]-->
+		<div id="wrapper">
+			<!-- Start Header -->
+			<header>
+				<a href="#" class="logo">Bosz<span>Book</span></a>
+				<form>
+					<input type="text"/>
+					<button class="cta">
+						Search
+					</button>
+				</form>
+				<a href="#" id="createProject" class="cta">Create a project</a>
+				<ul class="nav">
+					<li>
+						<a href="http://localhost/rzf_booking/" class="active">Dashboard</a>
+					</li>
+					<li>
+						<a href="#">Team</a>
+					</li>
+					<li>
+						<a href="#">Projects</a>
+					</li>
+					<li>
+						<a href="http://localhost/rzf_booking/auth/logout">Logout</a>
+					</li>
+				</ul>
+			</header>
+			<!-- Ends Header -->
+			<!-- Starts Main Container -->
+			<div role="main">
+				<h1>Section Title</h1>
+
+				<div class="column-two-third">
+					<!-- Start Project View -->
+					<div class="finderContent">
+						<h3>Find available members</h3>
+						<form action="" method="post">
+							<fieldset>
+								<label>Start Date: </label>
+								<input class="shortBox" type="text" placeholder="Select a Date" id="datepickerStart" />
+							</fieldset>
+							<fieldset>
+								<label>End Date: </label>
+								<input class="shortBox" placeholder="Select a Date" type="text" id="datepickerEnd" />
+							</fieldset>
+							<fieldset>
+								<label>Skills: </label>
+								<input type="text" />
+							</fieldset>
+							<fieldset>
+								<input class="cta" type="submit" value="Find" />
+							</fieldset>
+						</form>
+
+					</div>
+					<!-- Ends Project View -->
+				</div>
+				<aside>
+					<h2>Recent Projects</h2>
+					<a href="#" class="viewAll">view all</a>
+
+					<section class="preview">
+						<img width="55" height="55" src="http://localhost/rzf_booking/images/boszbook-demo-img.jpg"/>
+						<p>
+							<strong><a href="http://localhost/rzf_booking/project/2">drawnetic</a></strong>
+						</p>
+						<p>
+							<strong>Account Lead: </strong>Carissa Hendricks
+						</p>
+						<p>
+							<strong>Project Description:</strong> A drawing application. A particle simulation. A collection of otherworldly images. A collaborative community. A unique and addictive visual experience.
+						</p>
+						<ul>
+							<li>
+								<a href="http://localhost/rzf_booking/project/2">View more</a>
+							</li>
+
+						</ul>
+					</section>
+
+					<section class="preview">
+						<img width="55" height="55" src="http://localhost/rzf_booking/images/boszbook-demo-img.jpg"/>
+						<p>
+							<strong><a href="http://localhost/rzf_booking/project/1">attprod-27</a></strong>
+						</p>
+						<p>
+							<strong>Account Lead: </strong>Carissa Hendricks
+						</p>
+						<p>
+							<strong>Project Description:</strong> html5 landing pages
+						</p>
+						<ul>
+							<li>
+								<a href="http://localhost/rzf_booking/project/1">View more</a>
+							</li>
+
+						</ul>
+					</section>
+
+					<section class="preview">
+						<img width="55" height="55" src="http://localhost/rzf_booking/images/boszbook-demo-img.jpg"/>
+						<p>
+							<strong><a href="http://localhost/rzf_booking/project/4">Bogart - Slicing Asset Project</a></strong>
+						</p>
+						<p>
+							<strong>Account Lead: </strong>Carissa Hendricks
+						</p>
+						<p>
+							<strong>Project Description:</strong> Bogart - Slicing Asset Project  Request
+						</p>
+						<ul>
+							<li>
+								<a href="http://localhost/rzf_booking/project/4">View more</a>
+							</li>
+
+						</ul>
+					</section>
+
+				</aside>
+			</div>
+
+			<!-- Ends Sidebar -->
+			<!-- Ends Main Container -->
+

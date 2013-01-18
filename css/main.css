@@ -1,0 +1,205 @@
+/* <<<<<
+ * CSS Style Sheet
+ * Bosz Digital / Boszbook
+ * Christian Chacon / Frederick Sosa - Presentation Layer Developers
+ * Bosz Digital 
+>>>>> */
+
+/* <<<<< HTML5 Boilerplate styles - h5bp.com (generated via initializr.com) >>>>> */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* <<<<< Author's custom styles >>>>> */
+
+/* <<<<< General >>>>> */
+body { max-width:980px; margin:0 auto; padding:2.0833333%; font-size:100%; line-height:1.5em; background:#cccccc; color:#333333; }
+a { outline:none; }
+h1{ font-size:2em; margin-bottom:1em; padding-bottom:0.2em; border-bottom:solid 1px #cccccc; }
+p { font-size:1em; /*line-height:0.1em;*/ margin-bottom:0.5em; font-weight:normal;}
+a { color:#29ABE2; }
+input, textarea { background:#ffffff; border:solid 0.0625em #cccccc; padding:0.5% }
+a:hover, a.active { color:#2495C4; }
+.cta { display:inline-block; text-align:center; text-decoration:none; padding:0.2em 2% 0.2em; font-size:0.875em; font-weight:bold; text-transform:uppercase; color:#ffffff; background:#b8b8b8 repeat ; /* for non-css3 browsers */ border-radius:0.5em; -moz-border-radius:0.5em; -webkit-border-radius:0.5em; -o-border-radius:0.5em; -ms-border-radius:0.5em; behavior:url(css/PIE.htc); border:none; color:#ffffff; background:#29ABE2; }
+.cta:hover, .active { color:#ffffff; background:#2495C4; }
+.editBtn { display:inline-block; background:url(../images/boszbook-edit-cta.png) no-repeat center center #29ABE2; width:16px; height:14px; padding:7px; text-indent:-99999px; float:right; border-radius:0.2em; -moz-border-radius:0.2em; -webkit-border-radius:0.2em; -o-border-radius:0.2em; -ms-border-radius:0.2em; behavior:url(css/PIE.htc); }
+
+/* <<<<< Login >>>>> */
+#loginPage a.logo{margin-left:380px;}
+#loginPage div[role="main"]{max-width:200px; margin-left:360px;}
+#loginPage h1{border:none;}
+form#systemLogin input[type="text"],form#systemLogin input[type="password"]{background-color:#e6e6e6; color:#c0c0c0; font-size:0.875em; border:none; width:190px; height:28px; margin-bottom:15px; padding-left:10px;}
+form#systemLogin input[type="submit"]{background:#29ABE2; color:#ffffff; border-radius:0.2em; -webkit-border-radius:0.2em; -moz-border-radius:0.2em; -o-border-radius:0.2em; width:70px; height:24px; border:none; padding-top:2px; margin:10px 0 10px 65px; behavior:url(css/PIE.htc);}
+form#systemLogin input[type="submit"]:hover, form#systemLogin input[type="submit"].active {background:#2495C4;}
+form#systemLogin a.remaindPass{font-size:0.75em; text-align:center; display:block;}
+
+/* <<<<< Header >>>>> */
+header { display:block; float:left; width:100%; min-height:6.25em; }
+header a.logo { display:block; width:216px; height:47px; background:url(../images/boszbook-logo.png) no-repeat; float:left; text-indent:-99999px; }
+header ul { float:left; width:35.10204%; clear:left; padding:0; margin:2.7% 0 0 1%; }
+header ul.nav li { display:inline-block; float:left; margin-right:4%; }
+header ul.nav li a { text-decoration:none; }
+header ul.nav li a.active { color:#ffffff; border-bottom:solid 3px #ffffff; background:none; }
+header form { width:260px; }
+header form, header a { display:block; float:right; clear:right;  }
+header form input { width:66%; border:none; padding:0.2em;}
+header form button{ float:right;}
+header #createProject { margin-top:2%; }
+
+/* <<<<< Main Content >>>>> */
+div[role="main"] { width:94%; padding:0 3% 3%; background:#ffffff; margin-top:0; margin-bottom:1em; float:left; }
+div[role="main"] div.column-two-third { width:65%; margin-right:2%; /*background:blue;*/ float:left; }
+div[role="main"] div.column-two-third section { margin-bottom:1.5em; background:#E6E6E6; padding:0.8em; }
+div[role="main"] div.column-two-third img, div[role="main"] aside img, div[role="main"] .column-one-third img, div[role="main"] .column-three-third img { float:left; margin-right:2%; margin-bottom:5%; }
+div[role="main"] div.column-two-third section h3, div[role="main"] div.column-two-third section p { margin: 0 }
+div[role="main"] div.column-three-third section { margin-bottom:1.5em; background:#E6E6E6; padding:0.8em; }
+div[role="main"] div.column-three-third section h3, div[role="main"] div.column-three-third section p { margin: 0 }
+div[role="main"] div.column-three-third section p { font-size:0.875em; line-height:1.125em; }
+
+div[role="main"] ul.pagination { display:block; float:right; }
+div[role="main"] ul.pagination li { display:block; float:left; }
+div[role="main"] ul.pagination li a{ display:block; width:14px; height:16px; padding:2px 5px 7px; vertical-align:top; float:left; margin-right:6px; cursor:pointer; }
+div[role="main"] .filterBox { width:35%; display:inline-block; clear:both; margin-left:65%; margin-bottom:1em; }
+div[role="main"] .filterBox button { display:block; float:right; }
+
+div[role="main"] .finderContent{display:inline-block; width:90%; padding:5%; background:#f2f2f2; font-size:1em; color:#666666; }
+div[role="main"] .finderContent form fieldset{float: left; margin-bottom: 1em; width: 100%;}
+div[role="main"] .finderContent form label{width:15%; text-align:right; display: inline-block;}
+div[role="main"] .finderContent form input.shortBox{width:120px;}
+div[role="main"] .finderContent form input[type="submit"] { display:block; clear:both; margin:10px auto 0 auto; padding:2% 4%; text-align:center;  }
+
+/* <<<<< Aside & columns >>>>> */
+
+/* <<<<< Aside >>>>> */
+div[role="main"] aside { width:30%; /*background:yellow;*/ float:right;}
+div[role="main"] aside h2 { margin:0 }
+div[role="main"] aside a.viewAll { display:block; clear:both; margin-bottom:1em; }
+div[role="main"] aside section.preview { display:block; width:100%; float:left; margin-bottom:1.5em  }
+div[role="main"] aside section.preview ul { margin-top:0; width:100%; }
+div[role="main"] aside section.preview ul li { display:block; float:left; margin-right:4%;  }
+div[role="main"] aside section.preview ul li a, div[role="main"] aside section.preview p  { font-size:0.875em; line-height:1.125em; }
+div[role="main"] aside section.preview p { margin:0; }
+ 
+/* <<<<< Columns >>>>> */
+div[role="main"] .column-one-third { width:27%; padding:2%; margin-right:2%; /*background:#f2f2f2;*/ float:left;}
+div[role="main"] .column-one-third:last-child { margin-right:0;}
+div[role="main"] .column-one-third h2 { margin:0 0 1em; }
+div[role="main"] .column-one-third a.viewAll { display:block; clear:both; margin-bottom:1em; }
+div[role="main"] .column-one-third section.preview { display:block; width:100%; float:left; margin-bottom:1.5em  }
+div[role="main"] .column-one-third section.preview ul { margin-top:0; width:100%; }
+div[role="main"] .column-one-third section.preview ul li { display:block; float:left; margin-right:2%;  }
+div[role="main"] .column-one-third section.preview ul li a, div[role="main"] .column-one-third section.preview p  { font-size:0.85em; line-height:1.125em; }
+div[role="main"] .column-one-third section.preview p { margin:0; }
+.maxHeight { overflow-y:scroll; overflow-x:hidden; max-height:768px; }
+
+/* <<<<< Create/Edit Page >>>>> */
+div[role="main"] .createEdit { display:inline-block; width:90%; padding:5%; background:#f2f2f2; font-size:1em; color:#666666; }
+div[role="main"] .createEdit form fieldset.addRemove a { text-decoration:none;        }
+div[role="main"] .createEdit form fieldset { width:100%; float:left; margin-bottom:1em; }
+div[role="main"] .createEdit form fieldset label { display:inline-block; width:12%; text-align:right; }
+div[role="main"] .createEdit form fieldset label.center { text-align:center; }
+div[role="main"] .createEdit form fieldset.addRemove { width:26%; padding:2%; margin-right:3%;}
+div[role="main"] .createEdit form fieldset.addRemove label { width:100%; text-align:center;  }
+div[role="main"] .createEdit form fieldset.addRemove select { width:100%; padding:8%; height:25em; overflow-x:hidden; overflow-y:scroll; background:#ffffff; border:solid 0.0625em #cccccc; }
+div[role="main"] .createEdit form fieldset.addRemove select option { margin-bottom:0.25em; color:#666666; }
+div[role="main"] .createEdit form input[type="submit"] { display:block; clear:both; margin:0 auto; padding:2% 4%; text-align:center;  }
+div[role="main"] .createEdit form fieldset.addRemove.btnBox { padding-top:20%; min-height:25em; margin:0; }
+div[role="main"] .createEdit form fieldset.addRemove.btnBox a, div[role="main"] .createEdit form fieldset.addRemove.btnBox label { width:70%; }
+
+footer { width:100%; float:left; }
+footer ul { display:block; width:60%; height:3em; margin:0 auto; clear:both; }
+footer ul li { display:block; float:left; margin:0.5% 0.8%; }
+footer p { text-align:center; margin:0; }
+   
+/* <<<<< Media Queries >>>>> */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+
+/*.editBtn { background:url(../images/boszbook-edit-cta2x.png) no-repeat center center #29ABE2; background-size:16px 14px; }
+header a.logo { background:url(../images/boszbook-logo2x.png); background-size:216px 47px; }*/
+
+}
+
+@media all and (min-device-width:800px) and (max-width:1024px) {
+
+
+}
+
+@media all and (min-device-width:480px) and (max-width:799px) {
+
+/*body { width:98%; }
+header ul { width:65%; margin:5% 0 0; }
+div[role="main"] aside section.preview ul li { margin-right:2%; font-size:95%; }
+/*div[role="main"] div.mainContent section:nth-last-child(-n+3) { opacity:0.3; filter:alpha(opacity=30);} */*/
+
+}
+
+@media all and (min-device-width:320px) and (max-width:479px) {
+
+/*body { width:; padding:0;}
+
+header { min-height:8em; }
+header a.logo { margin:0 auto 4%; float:none;}
+header ul { width:65%; margin:6% auto 0; float:none; }
+header form { display:none; }
+header #createProject { display:block; width:65%; margin:0 auto; float:none; }
+
+div[role="main"] { width:94%; margin:0 auto; }
+div[role="main"] div.mainContent section:nth-last-child(-n+3) { display:none; }
+div[role="main"] div.mainContent, div[role="main"] aside { width:100%;}
+div[role="main"] aside section.preview:nth-last-child(-n+5) { display:none; }
+div[role="main"] aside section.preview { font-size:1.3em; }
+
+footer ul { width:100%;}*/
+
+}
