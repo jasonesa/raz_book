@@ -35,10 +35,18 @@
                         	<input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
                         	<input type="hidden" name="start_date" value="<?php echo urldecode($starts);?>"/>
                         	<input type="hidden" name="end_date" value="<?php echo urldecode($ends);?>"/>
-                        	<a href="#" class="cta">Book</a>
+                        	<a href="#inline_content" class="cta confirm">Book</a>
                         </form>
                     </section>
                 </div>
                 <!-- Ends Sidebar -->
+                <!-- This contains the hidden content for inline calls -->
+                <div style='display:none'>
+                    <div id='inline_content' style='padding:10px; background:#fff;'>
+                    <p></p>
+                    <p>You are about to book this resurses from <?php echo urldecode($starts);?> to <?php echo urldecode($ends);?> </p>
+                    <p>Or <a id="click" href="#" style='padding:5px; background:#ccc;'>Add to existent reservation</a></p>
+                    </div>
+                </div>
             </div>
             <!-- Ends Main Container -->
