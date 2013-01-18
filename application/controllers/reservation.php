@@ -26,11 +26,9 @@ class Reservation extends CI_Controller {
 		$this -> load -> helper('url');
 		$this -> load -> helper('date');
 		$this->load->library('session');
-		//var_dump(isset($_SESSION['username']));
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
 		}
-		$this->user=$this->session->userdata('session_id');
 		$this -> load -> model('reservation_model');
 		$this -> load -> model('resource_model');
 	}
@@ -79,11 +77,10 @@ class Reservation extends CI_Controller {
 		$ends = $this -> input -> post('end_date');
 		$ends = date("Y-m-d H:i:s", strtotime($ends));
 		$resource = $this -> input -> post('resource_id');
-
+		$user= $this->session->userdata('userid');
 		$is_available = $this -> reservation_model -> checkAvailability($starts, $ends, $resource);
 		if ($is_available) {
-			echo $this->user;
-			//$this -> reservation_model -> book_resource($starts, $ends, $resource, $this->user);
+			$this -> reservation_model -> book_resource($starts, $ends, $resource, $user);
 			echo 'booked';
 		}else{
 		echo 'already booked';
