@@ -35,7 +35,7 @@
                         	<input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
                         	<input type="hidden" name="start_date" value="<?php echo urldecode($starts);?>"/>
                         	<input type="hidden" name="end_date" value="<?php echo urldecode($ends);?>"/>
-                        	<input type="submit" class="cta" value="Book">
+                        	<a href="#" class="cta">Book</a>
                         </form>
                     </section>
                 </div>
