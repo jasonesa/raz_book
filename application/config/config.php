@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/raz_book';
+$config['base_url']	= 'http://localhost:8888/raz_book';
 
 /*
 |--------------------------------------------------------------------------
