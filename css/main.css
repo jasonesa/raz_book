@@ -84,7 +84,6 @@ form#systemLogin input[type="submit"]:hover, form#systemLogin input[type="submit
 form#systemLogin a.remaindPass{font-size:0.75em; text-align:center; display:block;}
 
 /* <<<<< Header >>>>> */
-/* <<<<< Fredito >>>>> */
 header { display:block; float:left; width:100%; min-height:6.25em; }
 header a.logo { display:block; width:216px; height:47px; background:url(../images/boszbook-logo.png) no-repeat; float:left; text-indent:-99999px; }
 header ul { float:left; width:35.10204%; clear:left; padding:0; margin:2.7% 0 0 1%; }
@@ -164,7 +163,7 @@ div #bookConfirmModal form#conForm dt input[type="submit"]:hover, form#systemLog
 div #bookConfirmModal form#conForm dt input[type="submit"].fl{float:right; margin:0 0 0 5px; display:inline;}*/
 div.preview a.fl{float:left; margin:0 10px 0 0;}
 
-div#inline_content  input[type="submit"].bookNow{margin-left:45%; text-align:center; padding:7px;}
+div#inline_content  input[type="submit"].bookNow{margin-left:42%; text-align:center; padding:7px; margin-top:10px; display:block;}
 div#inline_content form input[type="submit"]:hover,div#inline_content form input[type="submit"].active {background:#2495C4;}
 
 
