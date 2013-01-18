@@ -14,6 +14,8 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.0.min.js"><\/script>')</script>
 
+        <script src="js/libs/jquery.colorbox.js"></script>
+
         <script src="<?php echo base_url()?>js/plugins.js"></script>
         <script src="<?php echo base_url() ?>js/libs/jquery-ui.js"></script>
         <script src="<?php echo base_url()?>js/main.js"></script>
