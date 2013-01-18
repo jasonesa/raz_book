@@ -1,5 +1,5 @@
 $(function(){
-	//$( "#datepicker, #datepickerTwo, .datePicker").datepicker();
+	$( "#datepicker, #datepickerTwo, .datePicker").datepicker();
 
 	$('.confirm').colorbox({inline:true}, function(){});
 });
