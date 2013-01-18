@@ -24,7 +24,6 @@ class Welcome extends CI_Controller {
 		session_start();
 		parent::__construct();
 		$this->load->helper('url');
-		//var_dump(isset($_SESSION['username']));
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
 		}

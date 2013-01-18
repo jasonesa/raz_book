@@ -33,26 +33,28 @@ class Auth extends CI_Controller {
 		if (isset($_SESSION['username'])) {
 			redirect('welcome');
 		}
-
 		$this -> load -> library('form_validation');
 		$this -> form_validation -> set_rules('username', 'Email Address', 'valid_email|required');
 		$this -> form_validation -> set_rules('password', 'Password', 'required|min_length[4]');
-
 		if ($this -> form_validation -> run() !== false) {
 			// then validation passed. Get from db
 			$this -> load -> model('auth_model');
 			$res = $this -> auth_model -> verify_user($this -> input -> post('username'), $this -> input -> post('password'));
 			if ($res !== false) {
 				$_SESSION['username'] = $this -> input -> post('username');
-				
 				$this->session->set_userdata('username', $this -> input -> post('username'));
+				$this->session->set_userdata('userid', $res->iduser);
 				redirect('welcome');
 			}
 		}
 		$this -> load -> view('login_view');
 	}
+	
+	
+	
+	
 
-	//logout function
+	//-----------logout function----------------------
 	public function logout() {
 		$this -> load -> helper('form');
 		$_SESSION = array();

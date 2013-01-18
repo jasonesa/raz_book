@@ -16,14 +16,6 @@ class Reservation_model extends CI_Model {
 		return $reservations;
 	}
 
-	/*public function book_resource($resourceid,$project_id){
-	 $project=$this->get_project(1);
-	 $resourceid=1;
-	 $starts=$project->project_startDate;
-	 $ends=$project->project_endDate;
-
-	 }*/
-
 	public function get_by_user($resource_id) {
 		$this -> db -> select("reservation.start_date, reservation.end_date");
 		$this -> db -> from('reservation');
@@ -39,7 +31,6 @@ class Reservation_model extends CI_Model {
 		$nstart = mysql_to_unix($start_date);
 		$nend = mysql_to_unix($end_date);
 		$not_available = $this -> get_by_user($resource_id);
-	//print_r($not_available);
 		foreach ($not_available as $busy_range) {
 			$starts = mysql_to_unix($busy_range -> start_date);
 			$ends = mysql_to_unix($busy_range -> end_date);
@@ -79,10 +70,9 @@ class Reservation_model extends CI_Model {
 		return $reservation;
 	}
 
-	public function get_reservations() {
-		//$this->db->where();
+	public function get_reservations($user_id) {
+		$this->db->where('user_id',$user_id);
 		$reservations = $this -> db -> get("reservation");
-		
 		return $reservations -> result();
 	}
 
@@ -91,9 +81,9 @@ class Reservation_model extends CI_Model {
 		$this -> db -> insert('resource_has_reservation', $data);
 	}
 
-	public function book_resource($start, $end, $resource) {
+	public function book_resource($start, $end, $resource,$user_id) {
 		$this -> db -> trans_start();
-		$this -> create_reservation($start, $end);
+		$this -> create_reservation($start, $end,$user_id);
 		$reservation_id = $this -> db -> insert_id();
 		$data = array('resource_idresource' => $resource, 'reservation_idreservation' => $reservation_id);
 		$this -> db -> insert('resource_has_reservation', $data);
@@ -101,8 +91,8 @@ class Reservation_model extends CI_Model {
 
 	}
 
-	public function create_reservation($start, $end) {
-		$data = array('start_date' => $start, 'end_date' => $end, 'description' => 'TBD', 'user_id' => 1);
+	public function create_reservation($start, $end,$user) {
+		$data = array('start_date' => $start, 'end_date' => $end, 'description' => 'TBD', 'user_id' => $user);
 		$this -> db -> insert('reservation', $data);
 
 	}

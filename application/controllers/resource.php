@@ -30,7 +30,7 @@ class Resource extends CI_Controller {
 			redirect('login');
 		}
 		//------------move to a parent class----------
-
+		
 		$this -> load -> model('resource_model');
 		$this -> load -> model('reservation_model');
 		$this -> load -> model('skill_model');
