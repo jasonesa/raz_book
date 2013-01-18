@@ -46,6 +46,7 @@ class Resource extends CI_Controller {
 		$data['skills'] = $skills;
 		$this -> load -> view('header_view', $data);
 		$this -> load -> view('resource_view', $data);
+		$this -> load -> view('footer_view', $data);
 		//var_dump($res->row());
 
 	}
