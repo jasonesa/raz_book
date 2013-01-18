@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>css/normalize.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo base_url() ?>css/jquery-ui.css" />
 	<link rel="stylesheet" href="<?php echo base_url() ?>css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/colorbox.css" type="text/css"/>
     <script src="<?php echo base_url() ?>js/libs/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 	<meta charset="utf-8">
 	<title>Welcome to booking system</title>
