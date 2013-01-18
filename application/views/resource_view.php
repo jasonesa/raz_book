@@ -29,7 +29,7 @@
                             <li><p><strong>AIM:</strong> jasonzv</p></li>
                             <li><p><strong>Email:</strong> <a href="#"><?php echo $resource->username;?></a> / <a href="#"><?php echo $resource->username;?></a></p></li>
                         </ul>
-                        <a href="#" class="cta">View Resume</a>
+                        <a href="#" class="cta fl">View Resume</a>
                         
                         <form action="<?php echo base_url()?>reservation/book_resource" method="post">
                         	<input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>

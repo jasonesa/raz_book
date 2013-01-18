@@ -161,7 +161,9 @@ div #bookConfirmModal{padding:20px; width:210px;}
 div #bookConfirmModal form#conForm dt select{}
 div #bookConfirmModal form#conForm dt input[type="submit"]{background:#29ABE2; color:#ffffff; border-radius:0.2em; -webkit-border-radius:0.2em; -moz-border-radius:0.2em; -o-border-radius:0.2em; height:24px; border:none; padding:2% 4%; margin:20px auto 0 auto; text-align:center; display:block; behavior:url(css/PIE.htc);}
 div #bookConfirmModal form#conForm dt input[type="submit"]:hover, form#systemLogin input[type="submit"].active {background:#2495C4;}
-div #bookConfirmModal form#conForm dt input[type="submit"].fl{float:right; margin:0 0 0 5px; display:inline;}
+/*div #bookConfirmModal form#conForm dt input[type="submit"].fl{float:right; margin:0 0 0 5px; display:inline;}*/
+.preview a.fl{float:left; margin:0 10px 0 0;}
+
 
 footer { width:100%; float:left; }
 footer ul { display:block; width:60%; height:3em; margin:0 auto; clear:both; }
