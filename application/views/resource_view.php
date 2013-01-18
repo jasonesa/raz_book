@@ -42,18 +42,3 @@
                 <!-- Ends Sidebar -->
             </div>
             <!-- Ends Main Container -->
-            <!-- Starts Footer -->
-            <footer>
-                <ul>
-                    <li><a href="#">Terms of use</a></li>
-                    <li><a href="#">Bug/feature request</a></li>
-                    <li><a href="#">Request Support</a></li>
-                    <li><a href="#">Help/Documentation</a></li>     
-                </ul>
-                <p>powered by <a href="#">Bosz Digital</a></p>
-            </footer>
-            <!-- Ends Footer -->
-        </div>
-
-</body>
-</html>
