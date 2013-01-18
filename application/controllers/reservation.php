@@ -25,10 +25,12 @@ class Reservation extends CI_Controller {
 		parent::__construct();
 		$this -> load -> helper('url');
 		$this -> load -> helper('date');
+		$this->load->library('session');
 		//var_dump(isset($_SESSION['username']));
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
 		}
+		$this->user=$this->session->userdata('session_id');
 		$this -> load -> model('reservation_model');
 		$this -> load -> model('resource_model');
 	}
@@ -70,16 +72,6 @@ class Reservation extends CI_Controller {
 		$this -> load -> view('footer_view', $data);
 	}
 
-	/*public function book_resource() {
-	 $p_start = $this -> input -> post('start_date');
-	 $p_end = $this -> input -> post('end_date');
-	 $reservation_id = $this -> input -> post('reservation');
-	 $is_available = $this -> reservation_model -> checkAvailability($p_start, $p_end, $resource_id);
-	 if ($is_available) {
-	 $this -> reservation_model -> add_resource($resource_id, $reservation_id);
-	 }
-
-	 }*/
 
 	public function book_resource() {
 		$starts = $this -> input -> post('start_date');
@@ -90,7 +82,8 @@ class Reservation extends CI_Controller {
 
 		$is_available = $this -> reservation_model -> checkAvailability($starts, $ends, $resource);
 		if ($is_available) {
-			$this -> reservation_model -> book_resource($starts, $ends, $resource);
+			echo $this->user;
+			//$this -> reservation_model -> book_resource($starts, $ends, $resource, $this->user);
 			echo 'booked';
 		}else{
 		echo 'already booked';

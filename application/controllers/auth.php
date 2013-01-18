@@ -22,8 +22,10 @@ class Auth extends CI_Controller {
 
 	public function __construct() {
 		session_start();
+		
 		parent::__construct();
 		$this -> load -> helper('url');
+		$this->load->library('session');
 	}
 
 	//main authentication function
@@ -41,7 +43,9 @@ class Auth extends CI_Controller {
 			$this -> load -> model('auth_model');
 			$res = $this -> auth_model -> verify_user($this -> input -> post('username'), $this -> input -> post('password'));
 			if ($res !== false) {
-				$_SESSION['username'] = $this -> input -> post('email_address');
+				$_SESSION['username'] = $this -> input -> post('username');
+				
+				$this->session->set_userdata('username', $this -> input -> post('username'));
 				redirect('welcome');
 			}
 		}
