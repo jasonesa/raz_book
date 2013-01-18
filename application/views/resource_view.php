@@ -43,10 +43,9 @@
                         <input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
                         <input type="hidden" name="start_date" value="<?php echo urldecode($starts);?>"/>
                         <input type="hidden" name="end_date" value="<?php echo urldecode($ends);?>"/>
-                        <input type="hidden" name="username" value="<?php echo $username;?>"/>
                         <input type="submit" class="cta bookNow" value="Book"/>
                     </form>
-                    <p>Or <a id="click" href="<?php echo base_url()?>reservation/all" style='padding:5px; background:#ccc;'>Add to existent reservation</a></p>
+                    <p>Or <a id="click" href="<?php echo base_url()?>reservation/all">Add to existent reservation</a></p>
                     </div>
                 </div>
             </div>
