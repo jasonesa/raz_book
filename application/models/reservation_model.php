@@ -70,10 +70,9 @@ class Reservation_model extends CI_Model {
 		return $reservation;
 	}
 
-	public function get_reservations() {
-		//$this->db->where();
+	public function get_reservations($user_id) {
+		$this->db->where('user_id',$user_id);
 		$reservations = $this -> db -> get("reservation");
-
 		return $reservations -> result();
 	}
 

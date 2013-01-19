@@ -63,7 +63,8 @@ class Reservation extends CI_Controller {
 	}
 
 	public function all() {
-		$reservations = $this -> reservation_model -> get_reservations();
+		$user= $this->session->userdata('userid');
+		$reservations = $this -> reservation_model -> get_reservations($user);
 		$data['reservations'] = $reservations;
 		$this -> load -> view('header_view', $data);
 		$this -> load -> view('reservations_view', $data);
