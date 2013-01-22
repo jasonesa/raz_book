@@ -39,15 +39,14 @@
                 <div style='display:none'>
                     <div id='inline_content' style='padding:10px; background:#fff;'>
                     <p>You are about to book this resources from <?php echo urldecode($starts);?> to <?php echo urldecode($ends);?></p>
-                    <form action="<?php echo base_url()?>reservation/book_resource" method="post">
+                    <form action="" method="post">
                         <input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
                         <input type="hidden" name="start_date" value="<?php echo urldecode($starts);?>"/>
                         <input type="hidden" name="end_date" value="<?php echo urldecode($ends);?>"/>
-                        <input type="text" name="project_name" placeholder="Name or Description" />
+                        <input type="text" name="project_name" placeholder="Add a name or description for the project" />
 
-                        <input type="submit" class="cta bookNow" value="Book"/>
+                        <input type="submit" class="cta bookNow" value="Book Now"/>  or  <a id="click" class="cta" href="<?php echo base_url()?>reservation/all">Add to existent reservation</a>
                     </form>
-                    <p>Or <a id="click" class="cta" href="<?php echo base_url()?>reservation/all">Add to existent reservation</a></p>
                     </div>
                 </div>
             </div>
