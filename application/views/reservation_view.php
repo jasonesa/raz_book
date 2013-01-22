@@ -26,9 +26,9 @@
                             </fieldset>
                             <fieldset>
                                 <label>reservation Start:</label>
-                                <input id="datepicker" type="text" value="<?php echo $starts; ?>" />
+                                <input id="datepicker" type="text" name="start_date" value="<?php echo $starts; ?>" />
                                 <label class="center">until</label>
-                                <input id="datepickerTwo" type="text"  value="<?php echo $ends; ?>"/>
+                                <input id="datepickerTwo" type="text" name="end_date"  value="<?php echo $ends; ?>"/>
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>Available Resources:</label>
