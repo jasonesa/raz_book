@@ -32,7 +32,7 @@
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>Available Resources:</label>
-                                <select multiple>
+                                <select multiple id="available">
                                     <?php foreach ($available_resources as $resource):?>
                                     <option value="<?php echo $resource->idresource?>"><a href="#"><?php echo $resource->name. ' ('.$resource->position.')'?></a></option>
                                     <?php endforeach;?>
@@ -40,16 +40,16 @@
                             </fieldset>
                             <fieldset class="addRemove btnBox">
                                 <label>Add</label>
-                                <a href="#" class="cta">&larr;</a>
+                                <a href="#" class="cta add">&rarr;</a>
                                 <label>Remove</label>
-                                <a href="#" class="cta">&rarr;</a>
+                                <a href="#" class="cta">&larr;</a>
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>reservation assign members:</label>
-                                <select multiple name="members[]">
+                                <select multiple name="members[]" id="assigned">
 
                                     <?php foreach ($resources as $resource):?>
-                                    <option selected="selected" value="<?php echo $resource->idresource?>"><a href="#"><?php echo $resource->name.' ('.$resource->position.')'?></a></option>
+                                    <option value="<?php echo $resource->idresource?>"><a href="#"><?php echo $resource->name.' ('.$resource->position.')'?></a></option>
                                     <?php endforeach;?>
                                 </select>    
                             </fieldset>

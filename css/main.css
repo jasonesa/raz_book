@@ -135,11 +135,12 @@ div[role="main"] .column-one-third { width:27%; padding:2%; margin-right:2%; /*b
 div[role="main"] .column-one-third:last-child { margin-right:0;}
 div[role="main"] .column-one-third h2 { margin:0 0 1em; }
 div[role="main"] .column-one-third a.viewAll { display:block; clear:both; margin-bottom:1em; }
-div[role="main"] .column-one-third section.preview { display:block; width:100%; float:left; margin-bottom:1.5em  }
+div[role="main"] .column-one-third section.preview { display:block; width:100%; float:left; margin-bottom:1.5em; background:#F2F2F2; padding:10px 10px 0px 10px;}
 div[role="main"] .column-one-third section.preview ul { margin-top:0; width:100%; }
 div[role="main"] .column-one-third section.preview ul li { display:block; float:left; margin-right:2%;  }
 div[role="main"] .column-one-third section.preview ul li a, div[role="main"] .column-one-third section.preview p  { font-size:0.85em; line-height:1.125em; }
 div[role="main"] .column-one-third section.preview p { margin:0; }
+div[role="main"] .column-one-third section.preview p input[type="checkbox"]{float:right; margin:20px 10px 0 0; width:20px; height:20px;}
 .maxHeight { overflow-y:scroll; overflow-x:hidden; max-height:768px; }
 
 /* <<<<< Create/Edit Page >>>>> */
@@ -156,16 +157,13 @@ div[role="main"] .createEdit form input[type="submit"] { display:block; clear:bo
 div[role="main"] .createEdit form fieldset.addRemove.btnBox { padding-top:20%; min-height:25em; margin:0; }
 div[role="main"] .createEdit form fieldset.addRemove.btnBox a, div[role="main"] .createEdit form fieldset.addRemove.btnBox label { width:70%; }
 
-/*div #bookConfirmModal{padding:20px; width:210px;}
-div #bookConfirmModal form#conForm dt select{}
-div #bookConfirmModal form#conForm dt input[type="submit"]{background:#29ABE2; color:#ffffff; border-radius:0.2em; -webkit-border-radius:0.2em; -moz-border-radius:0.2em; -o-border-radius:0.2em; height:24px; border:none; padding:2% 4%; margin:20px auto 0 auto; text-align:center; display:block; behavior:url(css/PIE.htc);}
-div #bookConfirmModal form#conForm dt input[type="submit"]:hover, form#systemLogin input[type="submit"].active {background:#2495C4;}
-div #bookConfirmModal form#conForm dt input[type="submit"].fl{float:right; margin:0 0 0 5px; display:inline;}*/
 div.preview a.fl{float:left; margin:0 10px 0 0;}
 
 div#inline_content  input[type="text"]{display:block; width:290px; margin-left:28%;}
 div#inline_content  input[type="submit"].bookNow{margin-left:22%; text-align:center; padding:7px; margin-top:20px;}
 div#inline_content form input[type="submit"]:hover,div#inline_content form input[type="submit"].active {background:#2495C4;}
+
+div[role="main"] form#bookMore input[type="submit"].bookNow{text-align:center; padding:7px; margin-left:45%;}
 
 
 footer { width:100%; float:left; }
