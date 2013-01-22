@@ -31,7 +31,7 @@
                         </ul>
                         <a href="#" class="cta fl">View Resume</a>
                         <a href="#inline_content" class="cta confirm">Book</a>
-                        
+
                     </section>
                 </div>
                 <!-- Ends Sidebar -->
