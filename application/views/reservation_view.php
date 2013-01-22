@@ -7,7 +7,7 @@
                 <div class="column-three-third">
                     <!-- Start Profile View -->
                     <div class="createEdit">
-                        <form name="input" action="" method="get">
+                        <form  action="<?php echo base_url()?>reservation/book_resources" method="post">
                             <fieldset>
                                 <label>Name:</label>
                                 <input type="text" name="user" value="<?php echo $description;?>"/>
@@ -46,10 +46,10 @@
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>reservation assign members:</label>
-                                <select multiple>
+                                <select multiple name="members[]">
 
                                     <?php foreach ($resources as $resource):?>
-                                    <option value="<?php echo $resource->idresource?>"><a href="#"><?php echo $resource->name.' ('.$resource->position.')'?></a></option>
+                                    <option selected="selected" value="<?php echo $resource->idresource?>"><a href="#"><?php echo $resource->name.' ('.$resource->position.')'?></a></option>
                                     <?php endforeach;?>
                                 </select>    
                             </fieldset>

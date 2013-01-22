@@ -26,7 +26,7 @@ class Reservation extends CI_Controller {
 		$this -> load -> helper('url');
 		$this -> load -> helper('date');
 		$this->load->library('session');
-		if (!isset($_SESSION['username'])) {
+		if (!$this->session->userdata('username')) {
 			redirect('login');
 		}
 		$this -> load -> model('reservation_model');
@@ -70,6 +70,19 @@ class Reservation extends CI_Controller {
 		$this -> load -> view('reservations_view', $data);
 		$this -> load -> view('footer_view', $data);
 	}
+
+
+    public function book_resources() {
+    	
+		$resources = $this -> input -> post('members');
+		
+		var_dump($resources);
+		
+    }
+
+	
+
+
 
 
 	public function book_resource() {
