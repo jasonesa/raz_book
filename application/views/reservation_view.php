@@ -40,9 +40,9 @@
                             </fieldset>
                             <fieldset class="addRemove btnBox">
                                 <label>Add</label>
-                                <a href="#" class="cta">&larr;</a>
-                                <label>Remove</label>
                                 <a href="#" class="cta">&rarr;</a>
+                                <label>Remove</label>
+                                <a href="#" class="cta">&larr;</a>
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>reservation assign members:</label>
