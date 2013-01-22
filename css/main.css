@@ -163,7 +163,8 @@ div#inline_content  input[type="text"]{display:block; width:290px; margin-left:2
 div#inline_content  input[type="submit"].bookNow{margin-left:22%; text-align:center; padding:7px; margin-top:20px;}
 div#inline_content form input[type="submit"]:hover,div#inline_content form input[type="submit"].active {background:#2495C4;}
 
-div[role="main"] form#bookMore input[type="submit"].bookNow{text-align:center; padding:7px; margin-left:45%;}
+div[role="main"] form#bookMore input[type="text"]{margin-left:2%; width:290px;}
+div[role="main"] form#bookMore input[type="submit"].bookNow{text-align:center; padding:7px;}
 
 
 footer { width:100%; float:left; }
