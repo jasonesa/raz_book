@@ -55,7 +55,7 @@ class Reservation_model extends CI_Model {
               )
               GROUP BY resource.idresource
               )
-              ORDER BY resource.position";
+              ORDER BY resource.table_id_team";
 
 		$query = $this -> db -> query($statement);
 		$result = $query -> result();

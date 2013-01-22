@@ -25,9 +25,11 @@ class Login extends CI_Controller {
 
 	function __construct() {
 		session_start();
+		
 		parent::__construct();
+		$this->load->library('session');
 		$this->load->helper('url');
-		if (isset($_SESSION['username'])) {
+		if ($this->session->userdata('username')) {
 			redirect('welcome');
 		}
 	}

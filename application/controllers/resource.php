@@ -25,8 +25,9 @@ class Resource extends CI_Controller {
 		parent::__construct();
 		$this -> load -> helper('url');
 		$this -> load -> helper('date');
+		$this->load->library('session');
 		//------------move to a parent class----------
-		if (!isset($_SESSION['username'])) {
+		if (!$this->session->userdata('username')) {
 			redirect('login');
 		}
 		//------------move to a parent class----------

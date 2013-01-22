@@ -30,7 +30,7 @@ class Auth extends CI_Controller {
 
 	//main authentication function
 	public function index() {
-		if (isset($_SESSION['username'])) {
+		if ($this->session->userdata('username')) {
 			redirect('welcome');
 		}
 		$this -> load -> library('form_validation');
