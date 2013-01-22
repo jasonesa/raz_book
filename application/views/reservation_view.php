@@ -8,6 +8,7 @@
                     <!-- Start Profile View -->
                     <div class="createEdit">
                         <form  action="<?php echo base_url()?>reservation/book_resources" method="post">
+                        	 <input type="hidden" name="reservation_id" value="<?php echo $id_reservation;?>"/>
                             <fieldset>
                                 <label>Name:</label>
                                 <input type="text" name="user" value="<?php echo $description;?>"/>

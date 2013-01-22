@@ -84,12 +84,20 @@ class Reservation_model extends CI_Model {
 	public function book_resource($start, $end, $resource,$user_id) {
 		$this -> db -> trans_start();
 		$this -> create_reservation($start, $end,$user_id);
-		$reservation_id = $this -> db -> insert_id();
-		$data = array('resource_idresource' => $resource, 'reservation_idreservation' => $reservation_id);
-		$this -> db -> insert('resource_has_reservation', $data);
+		$reservation_id = $this -> db -> insert_id();	
+		$this->book_resourcex($resource,$reservation_id);
 		$this -> db -> trans_complete();
 
 	}
+	
+	
+	public function book_resourcex($id_resource,$reservation_id) {
+		$data = array('resource_idresource' => $id_resource, 'reservation_idreservation' => $reservation_id);
+		$this -> db -> insert('resource_has_reservation', $data);
+
+	}
+	
+	
 
 	public function create_reservation($start, $end,$user) {
 		$data = array('start_date' => $start, 'end_date' => $end, 'description' => 'TBD', 'user_id' => $user);

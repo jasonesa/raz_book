@@ -38,7 +38,8 @@ class Reservation extends CI_Controller {
 		if ($reservation_id) {
 			$reservation = $this -> reservation_model -> get_reservation($reservation_id) -> row();
 			$date_format = "%m/%d/%Y";
-			$data['reservation'] = $reservation;
+			$data['id_reservation'] = $reservation->idreservation;
+			
 			$data['starts'] = mdate($date_format, mysql_to_unix($reservation -> start_date));
 			$data['ends'] = mdate($date_format, mysql_to_unix($reservation -> end_date));
 			$data['resources'] = $this -> resource_model -> get_by_reservation($reservation_id);
@@ -73,22 +74,27 @@ class Reservation extends CI_Controller {
 
 	public function book_resources() {
 
-		$resources = $this -> input -> post('members');
-		$starts = $this -> input -> post('start_date');
-		$starts = date("Y-m-d H:i:s", strtotime($starts));
-		$ends = $this -> input -> post('end_date');
-		$ends = date("Y-m-d H:i:s", strtotime($ends));
-		$user = $this -> session -> userdata('userid');
+		$reservation_id= $this -> input -> post('reservation_id');
+		$resources= $this -> input -> post('members');
 		
 		foreach ($resources as $resource_id) {
-			$this->book_it($starts, $ends, $resource_id, $user);
+			$this->book_existent($resource_id,$reservation_id);
 		}
 		
 
 	}
 
+
+	
+	public function book_existent($resource_id, $reservation_id){
+		$this->reservation_model->book_resourcex($resource_id, $reservation_id);
+	}
+
+
 //This function performs the book of a resource
-	private function book_it($starts,$ends,$resource,$user) {
+	private function book_new($starts,$ends,$resource,$user) {
+		
+		
 		$is_available = $this -> reservation_model -> checkAvailability($starts, $ends, $resource);
 		if ($is_available) {
 			$this -> reservation_model -> book_resource($starts, $ends, $resource, $user);
@@ -108,7 +114,7 @@ class Reservation extends CI_Controller {
 		$ends = date("Y-m-d H:i:s", strtotime($ends));
 		$resource = $this -> input -> post('resource_id');
 		$user = $this -> session -> userdata('userid');
-		$this->book_it($starts,$ends,$resource,$user);
+		$this->book_new($starts,$ends,$resource,$user);
 
 	}
 
