@@ -8,6 +8,7 @@
                     <!-- Start Profile View -->
                     <div class="createEdit">
                         <form  action="<?php echo base_url()?>reservation/book_resources" method="post">
+                        	 <input type="hidden" name="reservation_id" value="<?php echo $id_reservation;?>"/>
                             <fieldset>
                                 <label>Name:</label>
                                 <input type="text" name="user" value="<?php echo $description;?>"/>
@@ -26,9 +27,9 @@
                             </fieldset>
                             <fieldset>
                                 <label>reservation Start:</label>
-                                <input id="datepicker" type="text" value="<?php echo $starts; ?>" />
+                                <input id="datepicker" type="text" name="start_date" value="<?php echo $starts; ?>" />
                                 <label class="center">until</label>
-                                <input id="datepickerTwo" type="text"  value="<?php echo $ends; ?>"/>
+                                <input id="datepickerTwo" type="text" name="end_date"  value="<?php echo $ends; ?>"/>
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>Available Resources:</label>
