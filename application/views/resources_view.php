@@ -68,10 +68,10 @@
 	</div>
 	<!-- ------------------------------------------------------------------------------ -->
 	<form id="bookMore" action="" method="post">
-	    <!-- <input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
+	    <input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
 	    <input type="hidden" name="start_date" value="<?php echo urldecode($starts);?>"/>
 	    <input type="hidden" name="end_date" value="<?php echo urldecode($ends);?>"/>
-	    <input type="text" name="project_name" placeholder="Add a name or description for the project" /> -->
+	    <input type="text" name="project_name" placeholder="Add a name or description for the project" />
 
 	    <input type="submit" class="cta bookNow" value="Book all"/>
 	</form>
