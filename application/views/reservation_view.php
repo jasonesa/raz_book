@@ -43,7 +43,7 @@
                                 <label>Add</label>
                                 <a href="#" class="cta add">&rarr;</a>
                                 <label>Remove</label>
-                                <a href="#" class="cta">&larr;</a>
+                                <a href="#" class="cta remove">&larr;</a>
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>reservation assign members:</label>
