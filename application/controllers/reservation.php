@@ -76,7 +76,6 @@ class Reservation extends CI_Controller {
 
 		$reservation_id= $this -> input -> post('reservation_id');
 		$resources= $this -> input -> post('members');
-		
 		foreach ($resources as $resource_id) {
 			$this->book_existent($resource_id,$reservation_id);
 		}
