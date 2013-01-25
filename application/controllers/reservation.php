@@ -43,7 +43,7 @@ class Reservation extends CI_Controller {
 			$data['starts'] = mdate($date_format, mysql_to_unix($reservation -> start_date));
 			$data['ends'] = mdate($date_format, mysql_to_unix($reservation -> end_date));
 			$data['resources'] = $this -> resource_model -> get_by_reservation($reservation_id);
-			$data['available_resources'] = $this -> reservation_model -> get_available_resources($reservation -> start_date, $reservation -> end_date);
+			$data['available_resources'] = $this -> resource_model -> get_available_resources($reservation -> start_date, $reservation -> end_date);
 			$data['user_iduser'] = $reservation -> user_id;
 			$data['description'] = $reservation -> description;
 		} else {
@@ -91,12 +91,12 @@ class Reservation extends CI_Controller {
 
 
 //This function performs the book of a resource
-	private function book_new($starts,$ends,$resource,$user) {
+	private function book_new($starts,$ends,$resource,$user,$reservation_name) {
 		
 		
-		$is_available = $this -> reservation_model -> checkAvailability($starts, $ends, $resource);
+		$is_available = $this -> resource_model -> checkAvailability($starts, $ends, $resource);
 		if ($is_available) {
-			$this -> reservation_model -> book_resource($starts, $ends, $resource, $user);
+			$this -> reservation_model -> book_resource($starts, $ends, $resource, $user,$reservation_name);
 			echo 'booked';
 		} else {
 			echo 'already booked';
@@ -112,8 +112,9 @@ class Reservation extends CI_Controller {
 		$ends = $this -> input -> post('end_date');
 		$ends = date("Y-m-d H:i:s", strtotime($ends));
 		$resource = $this -> input -> post('resource_id');
+		$reservation_name = $this -> input -> post('reservation_name');
 		$user = $this -> session -> userdata('userid');
-		$this->book_new($starts,$ends,$resource,$user);
+		$this->book_new($starts,$ends,$resource,$user,$reservation_name);
 
 	}
 
@@ -127,7 +128,7 @@ class Reservation extends CI_Controller {
 		}
 		//just for testing
 
-		$is_available = $this -> reservation_model -> checkAvailability($pstart, $pend, $resource_id);
+		$is_available = $this -> resource_model -> checkAvailability($pstart, $pend, $resource_id);
 		var_dump($is_available);
 	}
 
