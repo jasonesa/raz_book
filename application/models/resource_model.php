@@ -68,7 +68,7 @@ class Resource_model extends CI_Model {
    
    //Returns an array with the resources available between a date range
    public function get_available_resources($start_date, $end_date) {
-		$statement = "SELECT resource.idresource, resource.name, resource.position FROM resource  WHERE resource.idresource NOT IN(
+		$statement = "SELECT resource.idresource, resource.name, resource.position, resource.table_id_team FROM resource  WHERE resource.idresource NOT IN(
               SELECT resource.idresource
               FROM resource
               JOIN resource_has_reservation ON resource_idresource = resource.idresource
