@@ -149,12 +149,12 @@ div[role="main"] .createEdit form fieldset.addRemove a { text-decoration:none;  
 div[role="main"] .createEdit form fieldset { width:100%; float:left; margin-bottom:1em; }
 div[role="main"] .createEdit form fieldset label { display:inline-block; width:12%; text-align:right; }
 div[role="main"] .createEdit form fieldset label.center { text-align:center; }
-div[role="main"] .createEdit form fieldset.addRemove { width:26%; padding:2%; margin-right:3%;}
+div[role="main"] .createEdit form fieldset.addRemove { width:26%; padding:2%; /*margin-right:3%;*/}
 div[role="main"] .createEdit form fieldset.addRemove label { width:100%; text-align:center;  }
 div[role="main"] .createEdit form fieldset.addRemove select { width:100%; padding:8%; height:25em; overflow-x:hidden; overflow-y:scroll; background:#ffffff; border:solid 0.0625em #cccccc; }
 div[role="main"] .createEdit form fieldset.addRemove select option { margin-bottom:0.25em; color:#666666; }
 div[role="main"] .createEdit form input[type="submit"] { display:block; clear:both; margin:0 auto; padding:2% 4%; text-align:center;  }
-div[role="main"] .createEdit form fieldset.addRemove.btnBox { padding-top:20%; min-height:25em; margin:0; }
+div[role="main"] .createEdit form fieldset.addRemove.btnBox { padding-top:20%; padding-left:8%; width:30%; min-height:18em; margin:0; }
 div[role="main"] .createEdit form fieldset.addRemove.btnBox a, div[role="main"] .createEdit form fieldset.addRemove.btnBox label { width:70%; }
 
 div.preview a.fl{float:left; margin:0 10px 0 0;}

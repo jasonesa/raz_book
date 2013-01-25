@@ -40,6 +40,14 @@ $(function(){
     		}
 
 		});
+
+		$('#available option').each(function(){
+	    	
+    		if($(this).hasClass('removed')){
+    			$(this).attr('selected','selected');
+    		}
+
+		});
 	});
 
 
