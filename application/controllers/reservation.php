@@ -39,7 +39,6 @@ class Reservation extends CI_Controller {
 			$reservation = $this -> reservation_model -> get_reservation($reservation_id) -> row();
 			$date_format = "%m/%d/%Y";
 			$data['id_reservation'] = $reservation->idreservation;
-			
 			$data['starts'] = mdate($date_format, mysql_to_unix($reservation -> start_date));
 			$data['ends'] = mdate($date_format, mysql_to_unix($reservation -> end_date));
 			$data['resources'] = $this -> resource_model -> get_by_reservation($reservation_id);
