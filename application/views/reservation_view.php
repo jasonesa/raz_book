@@ -33,7 +33,7 @@
                             </fieldset>
                             <fieldset class="addRemove">
                                 <label>Available Resources:</label>
-                                <select multiple id="available">
+                                <select multiple name="removedMembers[]"  id="available">
                                     <?php foreach ($available_resources as $resource):?>
                                     <option value="<?php echo $resource->idresource?>"><a href="#"><?php echo $resource->name. ' ('.$resource->position.')'?></a></option>
                                     <?php endforeach;?>
