@@ -76,7 +76,7 @@ class Resource extends CI_Controller {
 		if ($start && $end) {
 			$data['starts']=$start;
 			$data['ends']=$end;
-			$data['available_resources'] = $this -> reservation_model -> get_available_resources($start, $end);
+			$data['available_resources'] = $this -> resource_model -> get_available_resources($start, $end);
 		} else {/*pull resources without filter*/}
 		
 		$this -> load -> view('header_view');
