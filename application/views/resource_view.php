@@ -43,7 +43,7 @@
                         <input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
                         <input type="hidden" name="start_date" value="<?php echo urldecode($starts);?>"/>
                         <input type="hidden" name="end_date" value="<?php echo urldecode($ends);?>"/>
-                        <input type="text" name="project_name" placeholder="Add a name or description for the project" />
+                        <input type="text" name="reservation_name" placeholder="Add a name or description for the project" />
 
                         <input type="submit" class="cta bookNow" value="Book Now"/>  or  <a id="click" class="cta" href="<?php echo base_url()?>reservation/all">Add to existent reservation</a>
                     </form>
