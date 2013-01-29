@@ -40,12 +40,13 @@
                 <!-- This contains the hidden content for inline calls -->
                 <div style='display:none'>
                     <div id='inline_content' style='padding:10px; background:#fff;'>
-                        <p>You are about to book this resources from <?php echo urldecode($starts);?> to <?php echo urldecode($ends);?></p>
                         <form action="<?php echo base_url()?>reservation/book_resource" method="post">
                             <input type="hidden" name="resource_id" value="<?php echo $resource->idresource;?>"/>
+                            <p>You are about to book this resources from <?php echo urldecode($starts);?></p>
                             <input type="<?php echo $input_kind;?>" name="start_date" class="shortBox datePicker" value="<?php echo urldecode($starts);?>"/>
+                            <p>to <?php echo  urldecode($ends);?></p>
                             <input type="<?php echo $input_kind;?>" name="end_date" class="shortBox datePicker" value="<?php echo urldecode($ends);?>"/>
-                            <input type="text" name="reservation_name" placeholder="Add a name or description for the project" />
+                            <input type="text" class="rName" name="reservation_name" placeholder="Add a name or description for the project" />
                             <input type="submit" class="cta bookNow" value="Book Now"/>  or  
                             <a id="click" class="cta" href="<?php echo base_url()?>reservation/all">Add to existent reservation</a>
                         </form>
