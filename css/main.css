@@ -141,7 +141,7 @@ div[role="main"] .column-one-third section.preview ul li { display:block; float:
 div[role="main"] .column-one-third section.preview ul li a, div[role="main"] .column-one-third section.preview p  { font-size:0.85em; line-height:1.125em; }
 div[role="main"] .column-one-third section.preview p { margin:0; }
 div[role="main"] .column-one-third section.preview p input[type="checkbox"]{float:right; margin:20px 10px 0 0; width:20px; height:20px;}
-.maxHeight { overflow-y:scroll; overflow-x:hidden; max-height:768px; }
+.maxHeight { overflow-y:scroll; overflow-x:hidden; max-height:385px; }
 
 /* <<<<< Create/Edit Page >>>>> */
 div[role="main"] .createEdit { display:inline-block; width:90%; padding:5%; background:#f2f2f2; font-size:1em; color:#666666; }
