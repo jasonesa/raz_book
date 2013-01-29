@@ -15,6 +15,7 @@
 		<?php
 		while ($continue_inner):
 			$resource = current($available_resources);
+			echo 'a'.$resource -> table_id_team.' b'.$current_team;
 			if ($resource -> table_id_team != $current_team):
 				$current_team = $resource -> table_id_team;
 				$continue_inner = false;
