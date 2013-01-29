@@ -141,7 +141,7 @@ div[role="main"] .column-one-third section.preview ul li { display:block; float:
 div[role="main"] .column-one-third section.preview ul li a, div[role="main"] .column-one-third section.preview p  { font-size:0.85em; line-height:1.125em; }
 div[role="main"] .column-one-third section.preview p { margin:0; }
 div[role="main"] .column-one-third section.preview p input[type="checkbox"]{float:right; margin:20px 10px 0 0; width:20px; height:20px;}
-.maxHeight { overflow-y:scroll; overflow-x:hidden; max-height:768px; }
+.maxHeight { overflow-y:scroll; overflow-x:hidden; max-height:385px; }
 
 /* <<<<< Create/Edit Page >>>>> */
 div[role="main"] .createEdit { display:inline-block; width:90%; padding:5%; background:#f2f2f2; font-size:1em; color:#666666; }
@@ -159,12 +159,15 @@ div[role="main"] .createEdit form fieldset.addRemove.btnBox a, div[role="main"] 
 
 div.preview a.fl{float:left; margin:0 10px 0 0;}
 
-div#inline_content input[type="text"].projectName{display:inline-block; width:290px; margin-left:28%;}
+div#inline_content{min-width:625px;}
+div#inline_content input[type="text"]{display:inline-block; width:290px; margin-left:28%;}
+div#inline_content input[type="text"].rName{display:block; clear:both; margin-top:10px;}
 div#inline_content input[type="submit"].bookNow{margin-left:22%; text-align:center; padding:7px; margin-top:20px;}
-div#inline_content form input[type="submit"]:hover,div#inline_content form input[type="submit"].active {background:#2495C4;}
-div#inline_content form input.shortBox{width:110px; float:left; margin-left:0;}
-div#inline_content form p{margin:0 10px; float:left;}
+div#inline_content input[type="submit"]:hover,div#inline_content form input[type="submit"].active {background:#2495C4;}
+div#inline_content input.shortBox{width:130px; float:left; margin-left:0; margin-right:5px; margin-bottom:10px;}
+div#inline_content p{margin:3px 5px 5px 0; float:left;}
 
+div[role="main"] form#bookMore{clear:both; /*padding-top:10px;*/}
 div[role="main"] form#bookMore input[type="text"]{margin-left:2%; width:290px;}
 div[role="main"] form#bookMore input[type="submit"].bookNow{text-align:center; padding:7px;}
 
