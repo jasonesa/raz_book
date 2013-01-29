@@ -27,7 +27,7 @@
 					<input type="checkbox" name="" value="">
 					</p>
 					<p><?php echo $resource -> position; ?></p>
-					<a href="<?php echo base_url().'resource/'. $resource->idresource.'/'.$starts.'/'.$ends?>">View more</a>
+					<a href="<?php echo base_url().'resource/'. $resource->idresource.'/'.$detail_suffix?>">View more</a>
 				</section>
 			<?php endif;
 					next($available_resources);

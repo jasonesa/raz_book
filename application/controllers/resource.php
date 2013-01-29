@@ -25,38 +25,38 @@ class Resource extends CI_Controller {
 		parent::__construct();
 		$this -> load -> helper('url');
 		$this -> load -> helper('date');
-		$this->load->library('session');
+		$this -> load -> library('session');
 		//------------move to a parent class----------
-		if (!$this->session->userdata('username')) {
+		if (!$this -> session -> userdata('username')) {
 			redirect('login');
 		}
 		//------------move to a parent class----------
-		
+
 		$this -> load -> model('resource_model');
 		$this -> load -> model('reservation_model');
 		$this -> load -> model('skill_model');
 
 	}
 
-	public function index($id,$start=null,$end=null) {
+	public function index($id, $start = null, $end = null) {
 		$resource = $this -> resource_model -> get_resource($id);
 		$skills = $this -> get_skills($id);
-		$data['starts']=($start!=null)?urldecode($start):'';
-		$data['ends']=($end!=null)?urldecode($end):'';
-		$data['input_kind']=($start!=''&&$end!='')?'hidden':'text';
+		$data['starts'] = ($start != null) ? urldecode($start) : '';
+		$data['ends'] = ($end != null) ? urldecode($end) : '';
+		$data['input_kind'] = ($start != '' && $end != '') ? 'hidden' : 'text';
 		$data['resource'] = $resource -> row();
 		$data['skills'] = $skills;
-		$pic_path=PICS.$id.'.jpg';
-		$resume_path=RESUMES.$id.'.pdf';
-		$data['profile_picture'] = (file_exists( $pic_path ))?base_url().$pic_path:base_url()."images/boszbook-demo-img.jpg";
-		$data['resume'] = (file_exists( $resume_path ))?base_url().$resume_path:false;
+		$pic_path = PICS . $id . '.jpg';
+		$resume_path = RESUMES . $id . '.pdf';
+		$data['profile_picture'] = (file_exists($pic_path)) ? base_url() . $pic_path : base_url() . "images/boszbook-demo-img.jpg";
+		$data['resume'] = (file_exists($resume_path)) ? base_url() . $resume_path : false;
 		$this -> load -> view('header_view', $data);
 		$this -> load -> view('resource_view', $data);
 		$this -> load -> view('footer_view', $data);
 	}
 
-	public function get_resources($limit) {
-		$this -> resource_model -> get_resources($limit);
+	public function get_resources($limit = false) {
+		return $this -> resource_model -> get_resources($limit);
 
 	}
 
@@ -68,20 +68,31 @@ class Resource extends CI_Controller {
 		//$this -> load -> view('user_view',$data);
 	}
 
-	public function all($s=NULL) {
+	public function available() {
 		$start = $this -> input -> get('start_date');
-		$start = date("Y-m-d H:i:s", strtotime($start));
+		$start = ($start) ? date("Y-m-d H:i:s", strtotime($start)) : false;
 		$end = $this -> input -> get('end_date');
 		$end = date("Y-m-d H:i:s", strtotime($end));
 
 		//header('Location: http://localhost/rzf_booking/resource/all');
-
 		if ($start && $end) {
-			$data['starts']=$start;
-			$data['ends']=$end;
+			$data['starts'] = $start;
+			$data['ends'] = $end;
 			$data['available_resources'] = $this -> resource_model -> get_available_resources($start, $end);
-		} else {/*pull resources without filter*/}
-		
+			$data['detail_suffix'] = "$start/$end";
+			$this -> load -> view('header_view');
+			$this -> load -> view('resources_view', $data);
+			$this -> load -> view('footer_view');
+		} else {
+			echo 'error in date';
+		}
+	}
+
+	public function all() {
+		$data['starts'] = '';
+		$data['ends'] = '';
+		$data['available_resources'] = $this -> get_resources();
+		$data['detail_suffix'] = null;
 		$this -> load -> view('header_view');
 		$this -> load -> view('resources_view', $data);
 		$this -> load -> view('footer_view');

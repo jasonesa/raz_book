@@ -8,7 +8,7 @@
                     <!-- Start reservation View -->
                     <div class="finderContent">
                         <h3>Find available members</h3>
-                        <form action="<?php echo base_url()?>resource/all" method="get">
+                        <form action="<?php echo base_url()?>resource/available" method="get">
                             <fieldset>
                                 <label>Start Date: </label>
                                 <input class="shortBox datePicker" name="start_date" type="text" placeholder="Select a Date" />

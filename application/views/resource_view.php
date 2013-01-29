@@ -21,7 +21,7 @@
 						}
 					?>
 						</p>
-                        <p><strong>Portfolio:</strong> <a href="#">www.jasonzumbado.com</a></p>
+                        <p><strong>Portfolio:</strong> <a href="#">www.<?php echo $resource -> name?>.com</a></p>
                         <p></p>
                         <p><strong>Contact Jason:</strong></p>
                         <ul>
