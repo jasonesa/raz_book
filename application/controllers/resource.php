@@ -45,6 +45,8 @@ class Resource extends CI_Controller {
 		$data['ends']=$end;
 		$data['resource'] = $resource -> row();
 		$data['skills'] = $skills;
+		$pic_path=PICS.$id.'.jpg';
+		$data['profile_picture'] = (file_exists( $pic_path ))?base_url().$pic_path:base_url()."images/boszbook-demo-img.jpg";
 		$this -> load -> view('header_view', $data);
 		$this -> load -> view('resource_view', $data);
 		$this -> load -> view('footer_view', $data);

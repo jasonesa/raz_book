@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteCond $1 !^(index\.php|images|uploads|js|css|robots\.txt)
+RewriteCond $1 !^(index\.php|images|profiles|js|css|robots\.txt)
 RewriteRule ^(.*)$ index.php/$1 [L]
 php_value date.timezone "America/New_York"

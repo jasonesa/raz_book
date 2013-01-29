@@ -3,7 +3,7 @@
                 <h1>Profile</h1>
                 <!-- Start Sidebar -->
                 <div class="column-one-third">
-                    <img width="250" height="250" src="<?php echo base_url(); ?>images/boszbook-demo-img.jpg"/>
+                    <img width="250" height="250" src="<?php echo $profile_picture ?>"/>
                 </div>
                 <div class="column-two-third">
                     <!-- Start Profile View -->
