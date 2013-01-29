@@ -38,20 +38,21 @@ class Resource extends CI_Controller {
 
 	}
 
-	public function index($id,$start=NULL,$end=NULL) {
+	public function index($id,$start=null,$end=null) {
 		$resource = $this -> resource_model -> get_resource($id);
 		$skills = $this -> get_skills($id);
-		$data['starts']=$start;
-		$data['ends']=$end;
+		$data['starts']=($start!=null)?urldecode($start):'';
+		$data['ends']=($end!=null)?urldecode($end):'';
+		$data['input_kind']=($start!=''&&$end!='')?'hidden':'text';
 		$data['resource'] = $resource -> row();
 		$data['skills'] = $skills;
 		$pic_path=PICS.$id.'.jpg';
+		$resume_path=RESUMES.$id.'.pdf';
 		$data['profile_picture'] = (file_exists( $pic_path ))?base_url().$pic_path:base_url()."images/boszbook-demo-img.jpg";
+		$data['resume'] = (file_exists( $resume_path ))?base_url().$resume_path:false;
 		$this -> load -> view('header_view', $data);
 		$this -> load -> view('resource_view', $data);
 		$this -> load -> view('footer_view', $data);
-		//var_dump($res->row());
-
 	}
 
 	public function get_resources($limit) {
