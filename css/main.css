@@ -167,6 +167,7 @@ div#inline_content input[type="submit"]:hover,div#inline_content form input[type
 div#inline_content input.shortBox{width:130px; float:left; margin-left:0; margin-right:5px; margin-bottom:10px;}
 div#inline_content p{margin:3px 5px 5px 0; float:left;}
 
+div[role="main"] form#bookMore{clear:both; /*padding-top:10px;*/}
 div[role="main"] form#bookMore input[type="text"]{margin-left:2%; width:290px;}
 div[role="main"] form#bookMore input[type="submit"].bookNow{text-align:center; padding:7px;}
 
