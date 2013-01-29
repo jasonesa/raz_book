@@ -8,15 +8,13 @@
 	//Separate resources by teams(html columns), could've been done with templates, choose this way because of performance
 	$continue = true;
 	$continue_inner = true;
-	$current_team = $available_resources[1] -> table_id_team;
+	$current_team = $available_resources[0] -> table_id_team;
 	while ($continue):
 		$continue_inner = true;?>
 		<div class="column-one-third maxHeight">
 		<?php
 		while ($continue_inner):
 			$resource = current($available_resources);
-			var_dump($resource);
-			echo 'resonrce->table_id_team='.$resource -> table_id_team.' $current_team'.$current_team.'<br/>';
 			if ($resource -> table_id_team != $current_team):
 				$current_team = $resource -> table_id_team;
 				$continue_inner = false;
