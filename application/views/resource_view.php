@@ -37,7 +37,7 @@
                 <!-- Ends Sidebar -->
                 <!-- This contains the hidden content for inline calls -->
                 <div style='display:none'>
-                	 <?php if($starts!=null):?>
+                	 <?php if($starts!=null && $end!=null):?>
                     <div id='inline_content' style='padding:10px; background:#fff;'>
                     <p>You are about to book this resources from <?php echo urldecode($starts);?> to <?php echo urldecode($ends);?></p>
                     <form action="<?php echo base_url()?>reservation/book_resource" method="post">
