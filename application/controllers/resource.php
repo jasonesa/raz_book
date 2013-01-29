@@ -79,6 +79,7 @@ class Resource extends CI_Controller {
 			$data['starts']=$start;
 			$data['ends']=$end;
 			$data['available_resources'] = $this -> resource_model -> get_available_resources($start, $end);
+			var_dump($data['available_resources']);
 		} else {/*pull resources without filter*/}
 		
 		$this -> load -> view('header_view');
