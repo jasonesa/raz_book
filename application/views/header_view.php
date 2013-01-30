@@ -25,7 +25,7 @@
                 <a href="#" id="createProject" class="cta">Create a project</a>
                 <ul class="nav">
                     <li><a href="<?php echo base_url() ?>" class="active">Dashboard</a></li>
-                    <li><a href="#">Team</a></li>
+                    <li><a href="<?php echo base_url() ?>resource/all">Team</a></li>
                     <li><a href="<?php echo base_url() ?>reservation/all">My Reservations</a></li>
                     <li><a href="<?php echo base_url()?>auth/logout">Logout</a></li>
                 </ul>
