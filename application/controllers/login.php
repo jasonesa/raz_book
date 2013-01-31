@@ -20,26 +20,31 @@ class Login extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-
-
-
 	function __construct() {
 		session_start();
-		
+
 		parent::__construct();
-		$this->load->library('session');
-		$this->load->helper('url');
-		if ($this->session->userdata('username')) {
+		$this -> load -> library('session');
+		$this -> load -> helper('url');
+		if ($this -> session -> userdata('username')) {
 			redirect('welcome');
 		}
 	}
 
-	public function index() {
+	public function index($type='user') {
 
 		$this -> load -> helper('form');
+		$data['action']="auth/index/$type";
+		$this -> load -> view('login_view',$data);
 
-		$this -> load -> view('login_view');
-		
+	}
+
+	public function admin() {
+		echo 'bulo';
+		$this -> load -> helper('form');
+		$data['action']='auth/resource';
+		$this -> load -> view('login_view',$data);
+
 	}
 
 }

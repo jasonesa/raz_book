@@ -58,7 +58,7 @@
             <!-- Starts Main Container -->
             <div role="main">
                 <h1>Login</h1>
-                <?php echo form_open('auth',array('id' => 'systemLogin'));?>
+                <?php echo form_open($action,array('id' => 'systemLogin'));?>
                 	<input name="username" type="text"  placeholder="Username"/>
                     <input name="password" type="password" value="" placeholder="Password"/>
                     <input type="submit" name="" value="Login">

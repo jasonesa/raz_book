@@ -7,13 +7,13 @@ class Resource_model extends CI_Model {
 	//This function returns the list of all resources, specify a parameter to define the maximun of resources to be retreived
 	function get_resources($limit = false) {
 		if ($limit) {
-			
+
 			$this -> db -> limit($limit, 0);
 			$this -> db -> order_by('name', 'random');
 		} else {
 			$this -> db -> order_by('table_id_team', 'asc');
 		}
-		
+
 		$this -> db -> select('name,username,position,idresource,table_id_team');
 		$users = $this -> db -> get('resource');
 		return $users -> result();
@@ -83,6 +83,16 @@ class Resource_model extends CI_Model {
 		$result = $query -> result();
 		return $result;
 
+	}
+
+	public function verify_user($email, $password) {
+		$q = $this -> db -> where('username', $email) -> where('password', sha1($password)) -> limit(1) -> get('resource');
+
+		if ($q -> num_rows > 0) {
+			// person has account with us
+			return $q -> row();
+		}
+		return false;
 	}
 
 }
