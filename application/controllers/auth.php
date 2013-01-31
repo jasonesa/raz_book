@@ -117,7 +117,8 @@ class Auth extends CI_Controller {
 		 $this->session->unset_userdata('userid');*/
 		$this -> session -> sess_destroy();
 		$data['action'] = 'auth';
-		$this -> load -> view('login_view', $data);
+		redirect('/');
+		//$this -> load -> view('login_view', $data);
 	}
 
 }

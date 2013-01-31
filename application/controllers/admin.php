@@ -34,8 +34,10 @@ class Admin extends CI_Controller {
 	}
 
 	public function index($reservation_id = NULL) {
-
-		echo 'this is admin';
+		echo $this -> session -> userdata('resourcename');
+		echo '<br/>this is admin <br/>';
+		echo $this -> session -> userdata('userid');
+		
 
 	}
 
