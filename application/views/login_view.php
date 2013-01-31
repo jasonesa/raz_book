@@ -9,7 +9,10 @@
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/normalize.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css">
-
+        <?php if($is_resource): ?>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/resource.css">
+		<?php endif;?>
+		
         <link rel="shortcut icon" href="images/icons/favicon.ico">
         <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png">
@@ -67,6 +70,7 @@
             </div>
             <!-- Ends Main Container -->
             <!-- Starts Footer -->
+            <?php if(!$is_resource): ?>
             <footer>
                 <ul>
                     <li><a href="#">Terms of use</a></li>
@@ -77,6 +81,7 @@
                 <p>powered by <a href="#">Bosz Digital</a></p>
             </footer>
             <!-- Ends Footer -->
+            <?php endif;?>
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.0.min.js"><\/script>')</script>

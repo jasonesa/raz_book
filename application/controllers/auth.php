@@ -28,77 +28,45 @@ class Auth extends CI_Controller {
 		$this -> load -> library('session');
 	}
 
-	//main authentication function
-	/*public function index() {
-	 if ($this->session->userdata('username')) {
-	 redirect('welcome');
-	 }
-	 $this -> load -> library('form_validation');
-	 $this -> form_validation -> set_rules('username', 'Email Address', 'valid_email|required');
-	 $this -> form_validation -> set_rules('password', 'Password', 'required|min_length[4]');
-	 if ($this -> form_validation -> run() !== false) {
-	 // then validation passed. Get from db
-	 $this -> load -> model('auth_model');
-	 $res = $this -> auth_model -> verify_user($this -> input -> post('username'), $this -> input -> post('password'));
-	 if ($res !== false) {
-	 $_SESSION['username'] = $this -> input -> post('username');
-	 $this->session->set_userdata('username', $this -> input -> post('username'));
-	 $this->session->set_userdata('userid', $res->iduser);
-	 redirect('welcome');
-	 }
-	 }
-	 $this -> load -> view('login_view');
-	 }*/
-
-	public function index($type = 'user') {
+	public function index($type = 'user_login') {
 		$this -> load -> library('form_validation');
-		switch ($type) {
-			case 'user' :
-				if ($this -> session -> userdata('username'))
-					redirect('welcome');
-				$model = 'auth_model';
-				$sess_data = 'username';
-				$sess_id = 'iduser';
-				$page = 'welcome';
-				break;
-
-			case 'resource' :
-				if ($this -> session -> userdata('resourcename'))
-					redirect('admin');
-				$model = 'resource_model';
-				$sess_data = 'resourcename';
-				$sess_id = 'idresource';
-				$page = 'admin';
-				$action='auth/index/resource';
-				break;
-
-			default :
-				redirect('login');
-				break;
+		if ($type != 'resource_login') {
+			$success_redirect='welcome';
+			$fail_redirect='/';
+			if ($this -> session -> userdata('username'))
+				redirect($success_redirect);
+			$sess_data = array('name_type' => 'username', 'id_type' => 'iduser', 'redirect' => $success_redirect, 'model' => 'auth_model');
+		} else {
+			$success_redirect='admin';
+			$fail_redirect='my_profile';
+			if ($this -> session -> userdata('resourcename'))
+				redirect($success_redirect);
+			$sess_data = array('name_type' => 'resourcename', 'id_type' => 'idresource', 'redirect' => $success_redirect, 'model' => 'resource_model');
 		}
 
 		$this -> form_validation -> set_rules('username', 'Email Address', 'valid_email|required');
 		$this -> form_validation -> set_rules('password', 'Password', 'required|min_length[4]');
 		if ($this -> form_validation -> run() !== false) {
-			$this -> verifyUser($model, $sess_data, $page, $sess_id);
+			$this -> verifyUser($sess_data);
 		}
-		redirect('/');
-		//$this -> load -> view('login_view',array('action'=>$action));
+		redirect($fail_redirect);
 	}
 
-
-
-	//verify user trying to login
-	private function verifyUser($model, $sess_data, $page, $id) {
-		$this -> load -> model($model);
-		$res = $this -> $model -> verify_user($this -> input -> post('username'), $this -> input -> post('password'));
+	//---------------------------verify user trying to login---------------------------
+	private function verifyUser($login_data) {
+		$this -> load -> model($login_data['model']);
+		$res = $this -> $login_data['model'] -> verify_user($this -> input -> post('username'), $this -> input -> post('password'));
 		if ($res !== false) {
-			$this -> session -> set_userdata($sess_data, $this -> input -> post('username'));
-			$this -> session -> set_userdata('userid', $res -> $id);
-			redirect($page);
+			$this -> session -> set_userdata($login_data['name_type'], $this -> input -> post('username'));
+			$this -> session -> set_userdata($login_data['id_type'], $res -> $login_data['id_type']);
+			redirect($login_data['redirect']);
 		}
 
 	}
+	//----------------------------------------------------------------------------------
+	
+	
+	
 
 	public function admin_auth() {
 		echo "admin auth";
@@ -107,18 +75,11 @@ class Auth extends CI_Controller {
 	//-----------logout function----------------------
 	public function logout() {
 		$this -> load -> helper('form');
-		/*$_SESSION = array();
-		 if (ini_get("session.use_cookies")) {
-		 $params = session_get_cookie_params();
-		 setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
-		 }*/
-
 		/*$this->session->unset_userdata('username');
 		 $this->session->unset_userdata('userid');*/
 		$this -> session -> sess_destroy();
 		$data['action'] = 'auth';
 		redirect('/');
-		//$this -> load -> view('login_view', $data);
 	}
 
 }

@@ -63,7 +63,7 @@ class Reservation extends CI_Controller {
 	}
 
 	public function all() {
-		$user = $this -> session -> userdata('userid');
+		$user = $this -> session -> userdata('iduser');
 		$reservations = $this -> reservation_model -> get_reservations($user);
 		$data['reservations'] = $reservations;
 		$this -> load -> view('header_view', $data);
@@ -112,7 +112,7 @@ class Reservation extends CI_Controller {
 		$ends = date("Y-m-d H:i:s", strtotime($ends));
 		$resource = $this -> input -> post('resource_id');
 		$reservation_name = $this -> input -> post('reservation_name');
-		$user = $this -> session -> userdata('userid');
+		$user = $this -> session -> userdata('iduser');
 		$this->book_new($starts,$ends,$resource,$user,$reservation_name);
 
 	}

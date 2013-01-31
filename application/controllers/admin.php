@@ -27,7 +27,7 @@ class Admin extends CI_Controller {
 		$this -> load -> helper('date');
 		$this -> load -> library('session');
 		if (!$this -> session -> userdata('resourcename')) {
-			redirect('admin');
+			redirect('my_profile');
 		}
 		$this -> load -> model('reservation_model');
 		$this -> load -> model('resource_model');
