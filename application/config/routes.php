@@ -43,7 +43,7 @@ $route['404_override'] = '';
 $route['resource/(:num)/(:any)/(:any)'] = "resource/index/$1/$2/$3";
 $route['resource/(:num)'] = "resource/index/$1";
 $route['reservation/(:num)'] = "reservation/index/$1";
-$route['admin'] = "login/index/resource";
+$route['my_profile'] = "login/index/resource";
 //http://localhost/raz_book/login/admin
 
 /* End of file routes.php */

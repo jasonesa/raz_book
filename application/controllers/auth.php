@@ -58,21 +58,21 @@ class Auth extends CI_Controller {
 					redirect('welcome');
 				$model = 'auth_model';
 				$sess_data = 'username';
-				$sess_id = 'userid';
+				$sess_id = 'iduser';
 				$page = 'welcome';
 				break;
 
 			case 'resource' :
 				if ($this -> session -> userdata('resourcename'))
-					redirect('adminr');
+					redirect('admin');
 				$model = 'resource_model';
 				$sess_data = 'resourcename';
 				$sess_id = 'idresource';
-				$page = 'adminr';
+				$page = 'admin';
+				$action='auth/index/resource';
 				break;
 
 			default :
-				echo 'default';
 				redirect('login');
 				break;
 		}
@@ -82,10 +82,13 @@ class Auth extends CI_Controller {
 		if ($this -> form_validation -> run() !== false) {
 			$this -> verifyUser($model, $sess_data, $page, $sess_id);
 		}
-
-		$this -> load -> view('login_view');
+		redirect('/');
+		//$this -> load -> view('login_view',array('action'=>$action));
 	}
 
+
+
+	//verify user trying to login
 	private function verifyUser($model, $sess_data, $page, $id) {
 		$this -> load -> model($model);
 		$res = $this -> $model -> verify_user($this -> input -> post('username'), $this -> input -> post('password'));

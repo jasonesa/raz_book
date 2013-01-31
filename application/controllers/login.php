@@ -39,13 +39,12 @@ class Login extends CI_Controller {
 
 	}
 
-	public function admin() {
-		echo 'bulo';
+	/*public function admin() {
 		$this -> load -> helper('form');
 		$data['action']='auth/resource';
 		$this -> load -> view('login_view',$data);
 
-	}
+	}*/
 
 }
 

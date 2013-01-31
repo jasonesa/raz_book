@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Adminr extends CI_Controller {
+class Admin extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -26,9 +26,9 @@ class Adminr extends CI_Controller {
 		$this -> load -> helper('url');
 		$this -> load -> helper('date');
 		$this -> load -> library('session');
-		/*if (!$this -> session -> userdata('username')) {
-			redirect('login');
-		}*/
+		if (!$this -> session -> userdata('resourcename')) {
+			redirect('admin');
+		}
 		$this -> load -> model('reservation_model');
 		$this -> load -> model('resource_model');
 	}
