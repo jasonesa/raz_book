@@ -95,4 +95,26 @@ class Resource_model extends CI_Model {
 		return false;
 	}
 
+
+
+
+	public function update_resource($resource,$skills,$id){
+		//var_dump($skills);
+
+		if($resource!=null){
+			$this->db->where('idresource',$id);
+			$this->db->update('resource', $resource); 
+
+		}
+
+
+	}
+
+
+
+
+
+
+
+
 }

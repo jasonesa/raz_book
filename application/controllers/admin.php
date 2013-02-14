@@ -19,13 +19,20 @@ class Admin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-
+	private $user_id;
+	private $resource;
+	private $skills;
+	private $picture;
 	function __construct() {
 		session_start();
 		parent::__construct();
 		$this -> load -> helper('url');
-		$this -> load -> helper('date');
+		//$this -> load -> helper('date');
 		$this -> load -> library('session');
+		$this->user_id=$this -> session -> userdata('idresource');
+		$this->resource=null;
+		$this->skills=null;
+		$this->picture=null;
 		if (!$this -> session -> userdata('resourcename')) {
 			redirect('my_profile');
 		}
@@ -33,13 +40,49 @@ class Admin extends CI_Controller {
 		$this -> load -> model('resource_model');
 	}
 
+
 	public function index($reservation_id = NULL) {
-		echo $this -> session -> userdata('resourcename');
-		echo '<br/>this is admin <br/>';
-		echo $this -> session -> userdata('userid');
+		$name= $this -> session -> userdata('resourcename');
+
+		$this->loadResource();
+		//var_dump($this->resource);
+
+
+		$data=array('name'=>$this->resource->name,'username'=>$this->resource->username,'skills'=>$this->skills,'user_id'=>$this->user_id,'pic'=>$this->picture,''=>'');
+
+		$this->load->view('resources/updateResource_view',$data);
 		
 
 	}
+
+
+	private function loadResource(){
+		$this->load->model('resource_model');
+		$this->load->model('skill_model');
+		$resource = $this -> resource_model -> get_resource($this->user_id);
+		$skills = $this -> skill_model -> get_skills($this->user_id);
+
+		$this->resource=$resource -> row();
+		$this->skills = $skills->result();
+
+		$pic_path = PICS . $this->user_id . '.jpg';
+		$resume_path = RESUMES . $this->user_id . '.pdf';
+		$this->picture = (file_exists($pic_path)) ? base_url() . $pic_path : base_url() . "images/boszbook-demo-img.jpg";
+		$resume = (file_exists($resume_path)) ? base_url() . $resume_path : false;
+	}
+
+
+	public function updateResource(){
+		$this->load->model('resource_model');
+		$skills= explode(',', trim($this->input->post('skills')));
+		$data['name']=$this->input->post('name');
+		$data['username']=$this->input->post('username');
+		$this->resource_model->update_resource($data,$skills,$this->user_id);
+		redirect('admin');
+
+	}
+
+
 
 
 

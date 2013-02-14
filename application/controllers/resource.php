@@ -62,7 +62,7 @@ class Resource extends CI_Controller {
 
 	private function get_skills($id) {
 		$res = $this -> skill_model -> get_skills($id);
-		$data['skills'] = $res;
+		//$data['skills'] = $res;
 		return $res;
 		//var_dump($res->result());
 		//$this -> load -> view('user_view',$data);

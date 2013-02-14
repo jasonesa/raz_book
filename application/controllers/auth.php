@@ -36,7 +36,7 @@ class Auth extends CI_Controller {
 			if ($this -> session -> userdata('username'))
 				redirect($success_redirect);
 			$sess_data = array('name_type' => 'username', 'id_type' => 'iduser', 'redirect' => $success_redirect, 'model' => 'auth_model');
-		} else {
+		} else {//resource_login
 			$success_redirect='admin';
 			$fail_redirect='my_profile';
 			if ($this -> session -> userdata('resourcename'))

@@ -32,7 +32,6 @@ class Login extends CI_Controller {
 	}
 
 	public function index($type='user_login') {
-
 		$this -> load -> helper('form');
 		$data['action']="auth/index/$type";
 		$data['is_resource']=($type=='user_login')?false:true;

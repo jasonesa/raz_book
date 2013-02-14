@@ -43,10 +43,6 @@
         }(document));
         </script>
     </head>
-<body>
-
-
-
 
 <body id="loginPage">
         <!--[if lt IE 7]>
