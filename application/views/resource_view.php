@@ -11,7 +11,7 @@
                         <h2><?php echo $resource -> name; ?></h2>
                         <p><strong>Position:</strong> <?php echo $resource -> position; ?></p>
                         <p><strong>Account:</strong> Razorfish Studio</p>
-                        <p><strong>About me:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p><strong>About me:</strong><?php echo $resource -> description; ?></p>
                         <p><strong>Skills:</strong> 
 						<?php
 						$skills = $skills -> result();
@@ -23,11 +23,11 @@
 						</p>
                         <p><strong>Portfolio:</strong> <a href="#">www.<?php echo $resource -> name?>.com</a></p>
                         <p></p>
-                        <p><strong>Contact Jason:</strong></p>
+                        <p><strong>Contact <?php echo $resource->name?>:</strong></p>
                         <ul>
-                            <li><p><strong>Skype:</strong> jasonzv</p></li>
-                            <li><p><strong>AIM:</strong> jasonzv</p></li>
-                            <li><p><strong>Email:</strong> <a href="#"><?php echo $resource->username;?></a> / <a href="#"><?php echo $resource->username;?></a></p></li>
+                            <li><p><strong>Skype:</strong><?php echo $resource -> skype?></p></li>
+                            <li><p><strong>AIM:</strong><?php echo $resource -> aim?></p></li>
+                            <li><p><strong>Email:</strong> <a href="#"><?php echo $resource->username;?></a> / <a href="#"><?php echo $resource->email_alt;?></a></p></li>
                         </ul>
                         <?php if($resume):?>
                         <a href="<?php echo $resume;?>" target="_blank" class="cta fl">View Resume</a>

@@ -63,20 +63,33 @@
                                 <input type="text" name="username" value="<?php echo $username;?>">
                             </fieldset>
 
+                            <fieldset>
+                                <label>Skype:</label>
+                                <input type="text" name="skype" value="<?php echo $skype;?>">
+                            </fieldset>
+
+                            <fieldset>
+                                <label>aim: </label>
+                                <input type="text" name="aim" value="<?php echo $aim;?>">
+                            </fieldset>
+
+                            <fieldset>
+                                <label>Razorfish email:</label>
+                                <input type="text" name="rzf_mail" value="<?php echo $rzf_mail;?>">
+                            </fieldset>
 
                             <fieldset>
                                 <label>Skills:</label>
-                                <textarea name="skills" columns="20" rows="8"><?php foreach($skills as $skill){
+                                <textarea name="skills" columns="50" rows="8"><?php foreach($skills as $skill){
                                         echo $skill->skillname.', ';
-                                    }?>
-                                </textarea>
+                                    }?></textarea>
                             </fieldset>
+
 
                             <fieldset>
-                                <label>Email:</label>
-                                <input type="text" name="user" value="<?php echo $username;?>">
+                                <label>About:</label>
+                                <textarea name="description" columns="50" rows="8"><?php echo $description; ?></textarea>
                             </fieldset>
-
                             <fieldset>
                                 <label>Resume:</label>
                                 <input type="file" name="resume" value="<?php echo '$resume';?>">

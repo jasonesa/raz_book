@@ -45,10 +45,18 @@ class Admin extends CI_Controller {
 		$name= $this -> session -> userdata('resourcename');
 
 		$this->loadResource();
-		//var_dump($this->resource);
 
+		$data=array('name'=>$this->resource->name,
+					'username'=>$this->resource->username,
+					'skills'=>$this->skills,
+					'user_id'=>$this->user_id,
+					'pic'=>$this->picture,
+					'rzf_mail'=>$this->resource->email_alt,
+					'description'=>$this->resource->description,
+					'skype'=>$this->resource->skype,
+					'aim'=>$this->resource->aim
 
-		$data=array('name'=>$this->resource->name,'username'=>$this->resource->username,'skills'=>$this->skills,'user_id'=>$this->user_id,'pic'=>$this->picture,''=>'');
+					);
 
 		$this->load->view('resources/updateResource_view',$data);
 		
@@ -77,6 +85,10 @@ class Admin extends CI_Controller {
 		$skills= explode(',', trim($this->input->post('skills')));
 		$data['name']=$this->input->post('name');
 		$data['username']=$this->input->post('username');
+		$data['email_alt']=$this->input->post('rzf_mail');
+		$data['aim']=$this->input->post('aim');
+		$data['skype']=$this->input->post('skype');
+		$data['description']=$this->input->post('description');
 		$this->resource_model->update_resource($data,$skills,$this->user_id);
 		redirect('admin');
 

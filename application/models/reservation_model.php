@@ -16,6 +16,13 @@ class Reservation_model extends CI_Model {
 		return $reservations;
 	}
 	
+	/**insert ignoring if exists a constraint
+	$insert_query = $this->db->insert_string('my_table', $data);
+	$insert_query = str_replace('INSERT INTO','INSERT IGNORE INTO',$insert_query);
+	$this->db->query($insert_query);
+	**/
+
+
 	/***************************************MOVE TO RESOURCE_MODEL***************************************************
 	//Returns an array with the resources available between a date range
 	public function get_available_resources($start_date, $end_date) {

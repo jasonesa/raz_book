@@ -3,6 +3,7 @@ $(function(){
 
 	$('.confirm').colorbox({inline:true}, function(){});
 
+
 	$(".add").click(function(ev){
 		ev.preventDefault();
 
@@ -10,8 +11,9 @@ $(function(){
 	    	
   			var bookId = $(this).val();
 			var bookName = $(this).text();
+			var status=($(this).hasClass('removed'))?'':'new';
 
-			$('#assigned').append('<option class="new" value=\"'+bookId+'\" ><a href=\"#\">'+bookName+'</a></option>');
+			$('#assigned').append('<option class=\"'+status+'\" value=\"'+bookId+'\" ><a href=\"#\">'+bookName+'</a></option>');
 
 	    	$(this).remove();
 		});
@@ -33,16 +35,15 @@ $(function(){
 
 
 	$('.createEdit form').submit(function() {
-		$('#assigned option').each(function(){
-	    	
+
+		/*$('#assigned option').each(function(){
     		if($(this).hasClass('new')){
     			$(this).attr('selected','selected');
     		}
-
-		});
+		});*/
+		$('#assigned option.new').attr('selected','selected');
 
 		$('#available option').each(function(){
-	    	
     		if($(this).hasClass('removed')){
     			$(this).attr('selected','selected');
     		}

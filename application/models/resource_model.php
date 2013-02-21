@@ -32,7 +32,7 @@ class Resource_model extends CI_Model {
 
 	//This function retrieves data of a specific user
 	public function get_resource($id) {
-		$this -> db -> select('idresource,name,username,position');
+		$this -> db -> select('idresource,name,username,position,email_alt,description,skype,aim');
 		$this -> db -> where("idresource", $id);
 		$resource = $this -> db -> get("resource");
 		return $resource;
