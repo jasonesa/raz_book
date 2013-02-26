@@ -171,6 +171,8 @@ div[role="main"] form#bookMore{clear:both; /*padding-top:10px;*/}
 div[role="main"] form#bookMore input[type="text"]{margin-left:2%; width:290px;}
 div[role="main"] form#bookMore input[type="submit"].bookNow{text-align:center; padding:7px;}
 
+#bookAll{clear:both;}
+
 
 footer { width:100%; float:left; }
 footer ul { display:block; width:60%; height:3em; margin:0 auto; clear:both; }

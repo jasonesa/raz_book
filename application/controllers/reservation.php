@@ -71,6 +71,7 @@ class Reservation extends CI_Controller {
 		$this -> load -> view('footer_view', $data);
 	}
 
+	//in reservation page where reservation already exists
 	public function book_resources() {
 
 		$reservation_id= $this -> input -> post('reservation_id');
@@ -82,6 +83,11 @@ class Reservation extends CI_Controller {
 
 	}
 
+	//in page where all available resources are shown for a specific range of dates new reservation must be created
+	public function book_resourcesx(){
+		echo "continue here, hope everything fixes";
+
+	}
 
 	
 	public function book_existent($resource_id, $reservation_id){

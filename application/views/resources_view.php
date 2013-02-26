@@ -24,7 +24,7 @@
 					<img width="55" height="55" src="<?php echo base_url(); ?>images/boszbook-demo-img.jpg"/>
 					<p>
 					<strong><?php echo $resource->name?></strong>
-					<input type="checkbox" name="" value="">
+					<input type="checkbox" form="bookAll" name="" value="<?php echo $resource->idresource?>">
 					</p>
 					<p><?php echo $resource -> position; ?></p>
 					<a href="<?php echo base_url().'resource/'. $resource->idresource.'/'.$detail_suffix?>">View more</a>
@@ -41,8 +41,8 @@
 	
 	<!-- ------------------------------------------------------------------------------ -->
 
-	<form id="bookMore" action="" method="post">
-	    <input type="hidden" name="resource_id" value="<?php echo $resource -> idresource; ?>"/>
+	<form id="bookAll" action="<?php echo base_url(); ?>reservation/book_resourcesx" method="post">
+	  
 	    <input type="hidden" name="start_date" value="<?php echo urldecode($starts); ?>"/>
 	    <input type="hidden" name="end_date" value="<?php echo urldecode($ends); ?>"/>
 	    <input type="text" name="project_name" placeholder="Add a name or description for the project" />
